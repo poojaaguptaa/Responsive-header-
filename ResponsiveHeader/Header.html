@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css"/>
+	<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+  	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+ 	<script type="text/javascript" src="js/jquery.min.js"></script>
+  	<script type="text/javascript" src="js/popper.min.js"></script>
+	<title>Header</title>
+</head>
+<body>
+	<section class="header">
+		<div class="container">
+			<div class="col-sm-2">
+				<img src="image/logo.png">
+			</div>
+			<div class="col-sm-7">
+				<div class="nav-links">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="menu-wrap">
+                      <nav class="menu">
+                        <div class="icon-list">
+                          	<li><a href="#">Home</a></li>
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Blog</a></li>
+							<li><a href="#">Contact Us</a></li>
+                        </div>
+                        <button class="close-button" id="close-button">X</button>
+                      </nav>
+                    </div>
+                    <button class="menu-button fa fa-bars" id="open-button">
+                    </button>
+			</div>
+			<div class="col-sm-3">
+				<div class="header-rr">
+					<button>Signup</button>
+					<button>Login</button>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script>
+    $(document).ready(function(){
+
+    // Responsive Navbar JS Start
+    (function($) {
+  "use strict";
+  var openBtn = $("#open-button"),
+    colseBtn = $("#close-button"),
+    menu = $(".menu-wrap");
+  // Open menu when click on menu button
+  openBtn.on("click", function() {
+    menu.addClass("active");
+  });
+  // Close menu when click on Close button
+  colseBtn.on("click", function() {
+    menu.removeClass("active");
+  });
+  // Close menu when click on anywhere on the document
+      $(document).on("click", function(e) {
+        var target = $(e.target);
+        if (target.is(".menu-wrap, .menu, .icon-list, .icon-list li, .icon-list li a, #open-button") === false) {
+          menu.removeClass("active");
+          e.stopPropagation();
+        }
+      });
+    })(jQuery);
+    // Responsive Navbar JS End
+
+
+});
+</script>
+</html>
